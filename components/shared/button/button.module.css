@@ -1,0 +1,10 @@
+.button {
+	border: solid 3px var(--color-light);
+	padding: 10px 20px;
+	font-family: var(--font-permanent-marker);
+	text-transform: uppercase;
+	color: var(--color-light);
+	background: transparent;
+	cursor: pointer;
+	font-size: 30px;
+}
