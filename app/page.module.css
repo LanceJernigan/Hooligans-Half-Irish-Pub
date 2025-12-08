@@ -1,0 +1,6 @@
+.transition {
+	@media (min-width: 768px) {
+		margin-top: -150px;
+		z-index: 10;
+	}
+}

@@ -1,0 +1,42 @@
+.component {
+	@media (min-width: 768px) {
+		padding: 0 25px;
+	}
+}
+
+.wrapper {
+	max-width: 1200px;
+	margin: auto;
+}
+
+.list {
+	display: grid;
+	align-items: stretch;
+	grid-auto-rows: 1fr;
+	height: 100vh;
+	position: relative;
+	background: var(--color-dark);
+
+	@media (min-width: 768px) {
+		grid-template-columns: repeat(3, 1fr);
+		height: 300px;
+		border-radius: 20px;
+		overflow: hidden;
+		border: solid 5px var(--color-light);
+	}
+}
+
+.item {
+	position: relative;
+	display: grid;
+	align-items: center;
+	justify-items: center;
+
+	h3 {
+		font-size: 80px;
+		font-family: var(--font-permanent-marker);
+		text-align: center;
+		color: var(--color-light);
+		z-index: 1;
+	}
+}
