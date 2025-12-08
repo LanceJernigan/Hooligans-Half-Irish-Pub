@@ -1,7 +1,6 @@
 .component {
 	position: relative;
 	min-height: 100vh;
-	/* background: var(--color-dark); */
 	background: black;
 	padding: 100px 25px;
 	display: flex;
@@ -66,18 +65,11 @@
 	left: 50%;
 	transform: translateX(-50%);
 	width: 100%;
-	/* max-width: 1200px; */
 	height: 100%;
 	object-fit: cover;
 	z-index: 0;
 
 	img {
-		/* opacity: 0.3;
-		mask-image: radial-gradient(
-			ellipse calc(100% - 60px) calc(100% - 60px) at center,
-			black 85%,
-			transparent 100%
-		); */
 		opacity: 0.3;
 		mask-image: linear-gradient(
 			to right,
@@ -85,7 +77,5 @@
 			black 50%,
 			transparent 100%
 		);
-		/* mask-image: url("#round-fade");
-		mask-mode: alpha; */
 	}
 }
