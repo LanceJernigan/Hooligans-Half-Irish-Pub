@@ -3,6 +3,7 @@ import EatDrinkWatch from "@/components/eatDrinkWatch";
 import Hero from "@/components/hero";
 import styles from "./page.module.css";
 import OrderOnline from "@/components/orderOnline";
+import Specials from "@/components/specials";
 
 export default function Home() {
 	return (
@@ -13,6 +14,7 @@ export default function Home() {
 				<EatDrinkWatch />
 			</section>
 			<OrderOnline />
+			<Specials />
 		</>
 	);
 }
