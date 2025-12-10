@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Sigmar, Hanken_Grotesk, Permanent_Marker } from "next/font/google";
-import "./globals.css";
 import Image from "next/image";
+import "material-icons/iconfont/outlined.css";
+import "./globals.css";
 
 const sigmar = Sigmar({
 	variable: "--font-sigmar",

@@ -1,0 +1,144 @@
+.component {
+	padding: 250px 25px 100px;
+}
+
+.wrapper {
+	width: 100%;
+	max-width: 1200px;
+	margin: auto;
+	display: grid;
+	gap: 100px;
+}
+
+.content {
+	max-width: 800px;
+	display: grid;
+	gap: 25px;
+	color: var(--color-light);
+	text-align: center;
+	margin: auto;
+}
+
+.title {
+	font-size: 40px;
+	line-height: 50px;
+	font-family: var(--font-sigmar);
+	text-transform: uppercase;
+
+	@media (min-width: 768px) {
+		font-size: 60px;
+	}
+}
+
+.description {
+	font-size: 25px;
+	font-family: var(--font-hanken);
+}
+
+.contact {
+	display: grid;
+	gap: 50px;
+	align-items: end;
+
+	@media (min-width: 768px) {
+		grid-template-columns: 1fr 300px;
+	}
+}
+
+.form {
+	padding: 25px;
+	display: grid;
+	gap: 25px;
+	background: rgba(0, 0, 0, 0.5);
+	border-radius: 20px;
+	color: var(--color-light);
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+	backdrop-filter: blur(30px);
+}
+
+.formRow {
+	display: grid;
+	gap: 25px;
+
+	@media (min-width: 768px) {
+		grid-template-columns: 1fr 1fr;
+	}
+}
+
+.formLabel {
+	display: grid;
+	gap: 5px;
+	font-size: 25px;
+	font-family: var(--font-hanken);
+}
+
+.formInput {
+	background: rgba(255, 255, 255, 0.1);
+	border-radius: 20px;
+	padding: 10px;
+}
+
+.formTextarea {
+	height: 200px;
+}
+
+.submit {
+	font-size: 25px;
+	font-family: var(--font-hanken);
+	padding: 10px 30px;
+	background: rgba(255, 255, 255, 0.1);
+	border-radius: 20px;
+	justify-self: start;
+}
+
+.other {
+	display: grid;
+	gap: 25px;
+	color: var(--color-light);
+}
+
+.otherTitle {
+	font-size: 30px;
+	font-family: var(--font-permanent-marker);
+	text-align: center;
+	text-transform: uppercase;
+
+	@media (min-width: 768px) {
+		text-align: left;
+	}
+}
+
+.list {
+	background: rgba(0, 0, 0, 0.5);
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+	backdrop-filter: blur(30px);
+	border-radius: 20px;
+	padding: 10px;
+	display: grid;
+	gap: 5px;
+}
+
+.item {
+}
+
+.link {
+	padding: 10px 15px;
+	display: grid;
+	grid-template-columns: 35px 1fr;
+	gap: 20px;
+	border-radius: 20px;
+
+	&:hover,
+	&:focus {
+		background: rgba(255, 255, 255, 0.2);
+	}
+}
+
+.icon {
+	font-size: 35px;
+}
+
+.label {
+	font-size: 25px;
+	font-family: var(--font-hanken);
+}
