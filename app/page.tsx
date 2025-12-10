@@ -4,6 +4,7 @@ import Hero from "@/components/hero";
 import styles from "./page.module.css";
 import OrderOnline from "@/components/orderOnline";
 import Specials from "@/components/specials";
+import Favorites from "@/components/favorites";
 
 export default function Home() {
 	return (
@@ -15,6 +16,7 @@ export default function Home() {
 			</section>
 			<OrderOnline />
 			<Specials />
+			<Favorites />
 		</>
 	);
 }
