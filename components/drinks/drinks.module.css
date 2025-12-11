@@ -48,7 +48,7 @@
 .navigation {
 	position: sticky;
 	top: 19px;
-	z-index: 501;
+	z-index: 499;
 	font-size: 25px;
 	font-family: var(--font-hanken);
 	line-height: 30px;
@@ -56,10 +56,21 @@
 	text-align: center;
 	width: 250px;
 	margin: auto;
+	transform: translateY(0);
+	transition: all 0.15s ease-in-out;
+	opacity: 1;
 
 	@media (min-width: 1200px) {
 		width: 100%;
 		max-width: 854px;
+	}
+
+	&[data-stuck="false"] {
+		transition: all 0s;
+	}
+
+	&[data-visible="false"] {
+		opacity: 0;
 	}
 }
 

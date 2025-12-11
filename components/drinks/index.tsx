@@ -1,10 +1,11 @@
 "use client";
 
 import styles from "./drinks.module.css";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { DrinksProps } from "./types";
 import DrinkCard from "../shared/drinkCard";
 import Chevron from "../shared/icons/chevron";
+import useScrollState from "@/hooks/useScrollState";
 
 const labels = {
 	taps: "Tap",
@@ -21,6 +22,11 @@ const Drinks = ({
 		"taps" | "bottles" | "spirits" | "cocktails" | "ondeck"
 	>("taps");
 	const [showMenu, setShowMenu] = useState(false);
+	const [isStuck, setIsStuck] = useState(false);
+	const [scrollDirection, setScrollDirection] = useState<"up" | "down">("down");
+	const sentinelRef = useRef<HTMLDivElement>(null);
+
+	useScrollState(setIsStuck, setScrollDirection, sentinelRef);
 
 	const handleMenuClick =
 		(menu: "taps" | "bottles" | "spirits" | "cocktails" | "ondeck") => () => {
@@ -39,7 +45,15 @@ const Drinks = ({
 					</p>
 				</div>
 				<div className={styles.drinks}>
-					<div className={styles.navigation}>
+					<nav
+						className={styles.navigation}
+						data-stuck={isStuck}
+						data-visible={scrollDirection === "down" || !isStuck}
+					>
+						<div
+							ref={sentinelRef}
+							style={{ height: 1 }}
+						/>
 						<button
 							className={styles.currentMenu}
 							onClick={() => setShowMenu(!showMenu)}
@@ -98,7 +112,7 @@ const Drinks = ({
 								</button>
 							</li>
 						</ul>
-					</div>
+					</nav>
 					<ul className={styles.list}>
 						<li
 							className={styles.item}

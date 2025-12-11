@@ -3,38 +3,32 @@
 import Image from "next/image";
 import styles from "./header.module.css";
 import Menu from "@/components/shared/icons/menu";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import useScrollState from "@/hooks/useScrollState";
 
 const Header = () => {
-	const [hasScrolled, setHasScrolled] = useState(false);
-	const [previousScroll, setPreviousScroll] = useState(0);
-	const [scrollDirection, setScrollDirection] = useState("up");
 	const [menuOpen, setMenuOpen] = useState(false);
+	const [isStuck, setIsStuck] = useState(false);
+	const [scrollDirection, setScrollDirection] = useState<"up" | "down">("down");
+	const sentinelRef = useRef<HTMLDivElement>(null);
+
+	useScrollState(setIsStuck, setScrollDirection, sentinelRef);
 
 	useEffect(() => {
 		window.document.body.style.overflowY = menuOpen ? "hidden" : "auto";
 	}, [menuOpen]);
 
-	useEffect(() => {
-		const handleScroll = () => {
-			const currentY = window.scrollY;
-
-			setHasScrolled(currentY > 0);
-			setPreviousScroll(currentY);
-			setScrollDirection(currentY < previousScroll ? "up" : "down");
-		};
-
-		window.addEventListener("scroll", handleScroll);
-		return () => window.removeEventListener("scroll", handleScroll);
-	}, [previousScroll]);
-
 	return (
 		<>
+			<div
+				ref={sentinelRef}
+				style={{ height: 1 }}
+			/>
 			<header
 				className={styles.header}
-				data-scrolled={hasScrolled && !menuOpen}
-				data-visible={scrollDirection === "up" || !hasScrolled}
+				data-stuck={isStuck && !menuOpen}
+				data-visible={scrollDirection === "up" || !isStuck}
 			>
 				<div className={styles.wrapper}>
 					<Link href="/">

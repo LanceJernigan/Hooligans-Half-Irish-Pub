@@ -6,7 +6,7 @@
 	z-index: 500;
 	transition: all 0.15s ease-in-out;
 
-	&[data-scrolled="true"] {
+	&[data-stuck="true"] {
 		background: rgba(0, 0, 0, 0.5);
 		backdrop-filter: blur(30px);
 	}
