@@ -4,6 +4,7 @@ import Image from "next/image";
 import "material-icons/iconfont/outlined.css";
 import "./globals.css";
 import Header from "@/components/header";
+import Footer from "@/components/footer";
 
 const sigmar = Sigmar({
 	variable: "--font-sigmar",
@@ -40,6 +41,7 @@ export default function RootLayout({
 			>
 				<Header />
 				<main className="-mt-[1px]">{children}</main>
+				<Footer />
 				<div className="fixed top-0 left-0 h-screen w-screen -z-10 mix-blend-color-burn">
 					<Image
 						src="/assets/images/background.jpg"

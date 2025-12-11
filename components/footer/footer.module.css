@@ -1,0 +1,35 @@
+.footer {
+	width: 100vw;
+	background: var(--color-dark);
+	padding: 50px 25px;
+	color: var(--color-light);
+
+	@media (min-width: 768px) {
+		padding: 10px 50px;
+	}
+}
+
+.wrapper {
+	width: 100%;
+	max-width: 1200px;
+	margin: auto;
+	display: grid;
+	gap: 10px;
+	align-items: center;
+	justify-content: center;
+
+	@media (min-width: 768px) {
+		grid-auto-flow: column;
+		justify-content: space-between;
+	}
+}
+
+.logo {
+	margin: auto;
+	width: 55px;
+}
+
+.copyright {
+	font-size: 25px;
+	font-family: var(--font-hanken);
+}
