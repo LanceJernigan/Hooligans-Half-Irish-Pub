@@ -4,7 +4,6 @@ import styles from "./drinks.module.css";
 import { useState } from "react";
 import { DrinksProps } from "./types";
 import DrinkCard from "../shared/drinkCard";
-import Image from "next/image";
 import Chevron from "../shared/icons/chevron";
 
 const labels = {

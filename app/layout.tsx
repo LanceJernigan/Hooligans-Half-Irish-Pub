@@ -3,6 +3,7 @@ import { Sigmar, Hanken_Grotesk, Permanent_Marker } from "next/font/google";
 import Image from "next/image";
 import "material-icons/iconfont/outlined.css";
 import "./globals.css";
+import Header from "@/components/header";
 
 const sigmar = Sigmar({
 	variable: "--font-sigmar",
@@ -37,7 +38,8 @@ export default function RootLayout({
 			<body
 				className={`${sigmar.variable} ${hanken.variable} ${permanentMarker.variable} antialiased relative`}
 			>
-				{children}
+				<Header />
+				<main>{children}</main>
 				<div className="fixed top-0 left-0 h-screen w-screen -z-10 mix-blend-color-burn">
 					<Image
 						src="/assets/images/background.jpg"

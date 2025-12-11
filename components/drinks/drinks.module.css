@@ -37,13 +37,18 @@
 
 .drinks {
 	display: grid;
+	grid-auto-flow: row;
+	align-items: start;
+	justify-content: start;
 	gap: 50px;
+	min-height: 100vh;
+	grid-template-rows: min-content 1fr;
 }
 
 .navigation {
 	position: sticky;
-	top: 15px;
-	z-index: 50;
+	top: 19px;
+	z-index: 501;
 	font-size: 25px;
 	font-family: var(--font-hanken);
 	line-height: 30px;
