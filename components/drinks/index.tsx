@@ -22,11 +22,6 @@ const Drinks = ({
 		"taps" | "bottles" | "spirits" | "cocktails" | "ondeck"
 	>("taps");
 	const [showMenu, setShowMenu] = useState(false);
-	const [isStuck, setIsStuck] = useState(false);
-	const [scrollDirection, setScrollDirection] = useState<"up" | "down">("down");
-	const sentinelRef = useRef<HTMLDivElement>(null);
-
-	useScrollState(setIsStuck, setScrollDirection, sentinelRef);
 
 	const handleMenuClick =
 		(menu: "taps" | "bottles" | "spirits" | "cocktails" | "ondeck") => () => {
@@ -45,15 +40,7 @@ const Drinks = ({
 					</p>
 				</div>
 				<div className={styles.drinks}>
-					<nav
-						className={styles.navigation}
-						data-stuck={isStuck}
-						data-visible={scrollDirection === "down" || !isStuck}
-					>
-						<div
-							ref={sentinelRef}
-							style={{ height: 1 }}
-						/>
+					<nav className={styles.navigation}>
 						<button
 							className={styles.currentMenu}
 							onClick={() => setShowMenu(!showMenu)}

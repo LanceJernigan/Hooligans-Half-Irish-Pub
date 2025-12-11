@@ -64,14 +64,6 @@
 		width: 100%;
 		max-width: 854px;
 	}
-
-	&[data-stuck="false"] {
-		transition: all 0s;
-	}
-
-	&[data-visible="false"] {
-		opacity: 0;
-	}
 }
 
 .currentMenu {

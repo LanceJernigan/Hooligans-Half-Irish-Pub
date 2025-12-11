@@ -39,7 +39,7 @@ export default function RootLayout({
 				className={`${sigmar.variable} ${hanken.variable} ${permanentMarker.variable} antialiased relative`}
 			>
 				<Header />
-				<main>{children}</main>
+				<main className="-mt-[1px]">{children}</main>
 				<div className="fixed top-0 left-0 h-screen w-screen -z-10 mix-blend-color-burn">
 					<Image
 						src="/assets/images/background.jpg"
