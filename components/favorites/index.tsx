@@ -27,7 +27,6 @@ const Favorites = () => (
 							fill
 							className="object-cover object-center"
 							sizes="(min-width: 768px) 400px, 100vw"
-							quality={100}
 						/>
 					</div>
 					<div className={styles.itemContent}>
@@ -46,7 +45,6 @@ const Favorites = () => (
 							fill
 							className="object-cover object-center"
 							sizes="(min-width: 768px) 400px, 100vw"
-							quality={100}
 						/>
 					</div>
 					<div className={styles.itemContent}>
@@ -66,7 +64,6 @@ const Favorites = () => (
 							fill
 							className="object-cover object-center"
 							sizes="(min-width: 768px) 400px, 100vw"
-							quality={100}
 						/>
 					</div>
 					<div className={styles.itemContent}>
@@ -85,7 +82,6 @@ const Favorites = () => (
 							fill
 							className="object-cover object-center"
 							sizes="(min-width: 768px) 400px, 100vw"
-							quality={100}
 						/>
 					</div>
 					<div className={styles.itemContent}>

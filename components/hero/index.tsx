@@ -11,7 +11,6 @@ const Hero = () => {
 					alt="Hooligan's Logo"
 					width={125}
 					height={125}
-					quality={100}
 				/>
 				<h1>
 					Half Irish.
@@ -32,7 +31,6 @@ const Hero = () => {
 				fill
 				className="object-cover object-center z-0 mix-blend-hard-light"
 				sizes="100vw"
-				quality={100}
 			/>
 		</section>
 	);

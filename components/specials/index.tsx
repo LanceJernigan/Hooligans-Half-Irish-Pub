@@ -63,7 +63,6 @@ const Specials = () => (
 				fill
 				className="object-cover object-center z-0 mix-blend-hard-light"
 				sizes="100vw"
-				quality={100}
 			/>
 		</div>
 	</section>

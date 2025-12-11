@@ -25,7 +25,6 @@ const About = () => {
 					fill
 					className="object-cover object-center z-0"
 					sizes="100vw"
-					quality={100}
 				/>
 			</div>
 		</section>

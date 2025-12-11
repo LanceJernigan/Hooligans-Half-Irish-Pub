@@ -13,7 +13,6 @@ const EatDrinkWatch = () => (
 						fill
 						className="object-cover object-center"
 						sizes="(min-width: 768px) 400px, 100vw"
-						quality={100}
 					/>
 				</li>
 				<li className={styles.item}>
@@ -24,7 +23,6 @@ const EatDrinkWatch = () => (
 						fill
 						className="object-cover object-center"
 						sizes="(min-width: 768px) 400px, 100vw"
-						quality={100}
 					/>
 				</li>
 				<li className={styles.item}>
@@ -35,7 +33,6 @@ const EatDrinkWatch = () => (
 						fill
 						className="object-cover object-center"
 						sizes="(min-width: 768px) 400px, 100vw"
-						quality={100}
 					/>
 				</li>
 			</ul>
