@@ -1,11 +1,10 @@
 "use client";
 
 import styles from "./drinks.module.css";
-import { useRef, useState } from "react";
+import { useState } from "react";
 import { DrinksProps } from "./types";
 import DrinkCard from "../shared/drinkCard";
 import Chevron from "../shared/icons/chevron";
-import useScrollState from "@/hooks/useScrollState";
 
 const labels = {
 	taps: "Tap",
