@@ -187,7 +187,6 @@ export interface DrinkMenus {
 	ondeck: Beer[];
 	spirits: Spirit[];
 	taps: Beer[];
-	wubes: Spirit[];
 }
 
 export interface DrinksProps {
