@@ -17,6 +17,9 @@ const Header = () => {
 
 	useEffect(() => {
 		window.document.body.style.overflowY = menuOpen ? "hidden" : "auto";
+		window.document.body.style.borderRight = menuOpen
+			? "solid 15px black"
+			: "none";
 	}, [menuOpen]);
 
 	return (

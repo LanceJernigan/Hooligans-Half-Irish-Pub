@@ -4,7 +4,7 @@
 	top: 0;
 	padding: 25px;
 	z-index: 500;
-	transition: all 0.15s ease-in-out;
+	transition: all 0.2s ease-in-out;
 
 	&[data-stuck="true"] {
 		background: rgba(0, 0, 0, 0.5);
@@ -48,7 +48,7 @@
 	text-align: right;
 	opacity: 0;
 	transform: translateY(-100%);
-	transition: all 0.15s ease-in-out;
+	transition: all 0.2s ease-in-out;
 
 	&[data-open="true"] {
 		opacity: 1;
@@ -89,7 +89,7 @@
 
 .item {
 	a {
-		transition: color 0.15s ease-in-out;
+		transition: color 0.2s ease-in-out;
 		outline: none;
 
 		&:hover,
