@@ -43,6 +43,7 @@
 	gap: 50px;
 	min-height: 100vh;
 	grid-template-rows: min-content 1fr;
+	grid-template-columns: 1fr;
 }
 
 .navigation {
