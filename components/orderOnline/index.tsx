@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Button from "../shared/button";
+import Button from "@/components/shared/button/asLink";
 import styles from "./orderOnline.module.css";
 
 const OrderOnline = () => (
@@ -11,7 +11,13 @@ const OrderOnline = () => (
 					Skip the wait and grab your favorites with fast and easy online
 					ordering.
 				</p>
-				<Button>Order</Button>
+				<Button
+					href="https://order.toasttab.com/online/hooliganstn"
+					target="_blank"
+					className="w-max"
+				>
+					Order
+				</Button>
 			</div>
 			<div className={styles.image}>
 				<Image

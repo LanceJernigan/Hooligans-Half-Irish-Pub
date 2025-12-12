@@ -48,7 +48,7 @@
 .navigation {
 	position: sticky;
 	top: 19px;
-	z-index: 499;
+	z-index: 400;
 	font-size: 25px;
 	font-family: var(--font-hanken);
 	line-height: 30px;

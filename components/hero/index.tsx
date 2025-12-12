@@ -1,6 +1,6 @@
 import Image from "next/image";
 import styles from "./hero.module.css";
-import Button from "@/components/shared/button";
+import Button from "@/components/shared/button/asLink";
 
 const Hero = () => {
 	return (
@@ -21,8 +21,13 @@ const Hero = () => {
 					Your neighborhood pub for great food, cold drinks, and every big game.
 				</p>
 				<div className={styles.actions}>
-					<Button>ORDER</Button>
-					<Button>DRINK MENU</Button>
+					<Button
+						href="https://order.toasttab.com/online/hooliganstn"
+						target="_blank"
+					>
+						ORDER
+					</Button>
+					<Button href="/drinks">DRINK MENU</Button>
 				</div>
 			</div>
 			<Image

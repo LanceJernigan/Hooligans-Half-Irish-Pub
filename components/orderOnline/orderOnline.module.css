@@ -31,10 +31,6 @@
 		font-size: 25px;
 		font-family: var(--font-hanken);
 	}
-
-	button {
-		width: min-content;
-	}
 }
 
 .image {

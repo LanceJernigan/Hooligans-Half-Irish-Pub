@@ -47,7 +47,8 @@ const ContactForm = () => (
 					<ul className={styles.list}>
 						<li className={styles.item}>
 							<a
-								href=""
+								href="https://maps.app.goo.gl/Ymmjk1A6JnxJ6GYx5"
+								target="_blank"
 								className={styles.link}
 							>
 								<span className={`${styles.icon} material-icons-outlined`}>
@@ -69,7 +70,7 @@ const ContactForm = () => (
 						</li>
 						<li className={styles.item}>
 							<a
-								href=""
+								href="tel:+19315262927"
 								className={styles.link}
 							>
 								<span className={`${styles.icon} material-icons-outlined`}>

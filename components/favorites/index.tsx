@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Button from "../shared/button";
+import Button from "@/components/shared/button/asLink";
 import styles from "./favorites.module.css";
 
 const Favorites = () => (
@@ -16,7 +16,13 @@ const Favorites = () => (
 					From big, juicy burgers to crispy wings, these are the Hooligans
 					staples guests order on repeat
 				</p>
-				<Button className="w-max mx-auto">Full Menu</Button>
+				<Button
+					href="https://order.toasttab.com/online/hooliganstn"
+					target="_blank"
+					className="w-max mx-auto"
+				>
+					Full Menu
+				</Button>
 			</div>
 			<ul className={styles.list}>
 				<li className={styles.item}>
