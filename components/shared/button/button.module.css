@@ -1,5 +1,4 @@
 .button {
-	border: solid 3px var(--color-light);
 	padding: 10px 20px;
 	font-family: var(--font-permanent-marker);
 	text-transform: uppercase;
@@ -7,4 +6,28 @@
 	background: transparent;
 	cursor: pointer;
 	font-size: 30px;
+	background-image: url("/assets/svgs/chalk-outline.svg");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 100% 100%;
+	position: relative;
+	transition: all 0.2s ease-in-out;
+
+	&:hover {
+		background-color: rgba(0, 0, 0, 0.5);
+		/* backdrop-filter: blur(30px); */
+		opacity: 0.8;
+	}
+
+	/* &::after {
+		content: "";
+		display: block;
+		width: calc(100% - 3px);
+		height: calc(100% - 3px);
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate3d(-50%, -50%, 0);
+		background: var(--color-light);
+	} */
 }
