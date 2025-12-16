@@ -22,10 +22,11 @@ export async function POST(req: Request) {
 			email={email}
 		/>
 	);
+
 	try {
 		const data = await resend.emails.send({
 			from: `Hooligans <no-reply@thehalfirishpub.com>`,
-			to: "kalaroche@gmail.com",
+			to: "lance@lancejernigan.com",
 			subject: "New Contact Form Submission",
 			replyTo: email,
 			react: emailTemplate,
@@ -33,6 +34,7 @@ export async function POST(req: Request) {
 
 		return NextResponse.json({ success: true, data });
 	} catch (error) {
+		console.log(error);
 		if (error instanceof Error) {
 			return NextResponse.json(
 				{ error: "Failed to send email", details: error.message },

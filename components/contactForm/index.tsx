@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import styles from "./contactForm.module.css";
+import Cheers from "@/components/shared/icons/cheers";
 
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -55,6 +56,7 @@ const ContactForm = () => {
 		if (res.ok) {
 			setStatus("submitted");
 		} else {
+			console.log(res);
 			setStatus("error");
 		}
 	};
@@ -86,7 +88,7 @@ const ContactForm = () => {
 					</p>
 				</div>
 				<div className={styles.contact}>
-					{(status === "new" || status === "submitting") && (
+					{status === "new" || status === "submitting" ? (
 						<form
 							className={styles.form}
 							onSubmit={handleSubmit}
@@ -149,6 +151,20 @@ const ContactForm = () => {
 								Send
 							</button>
 						</form>
+					) : (
+						<div className={styles.message}>
+							{status === "submitted" ? <Cheers /> : null}
+							<h2 className={styles.messageHeading}>
+								{status === "submitted"
+									? "Cheers! We got your message"
+									: "Oops, that did not work"}
+							</h2>
+							<p className={styles.messageContent}>
+								{status === "submitted"
+									? "We have received your message. Keep an eye out for a reply from our team."
+									: "Something went wrong while sending your message. Please refresh the page and try again."}
+							</p>
+						</div>
 					)}
 					<div className={styles.other}>
 						<h2 className={styles.otherTitle}>Other ways to Connect</h2>
