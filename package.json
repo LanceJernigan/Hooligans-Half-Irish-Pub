@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@react-email/components": "^1.0.1",
+    "@react-email/render": "^2.0.0",
     "material-icons": "^1.13.14",
     "next": "16.0.7",
     "react": "19.2.0",
