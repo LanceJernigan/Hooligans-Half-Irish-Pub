@@ -3,7 +3,7 @@ import { NextResponse } from "next/server";
 export async function GET() {
 	try {
 		const res = await fetch(
-			"https://www.taphunter.com/widgets/location/v3/6344656122150912.json",
+			`https://www.taphunter.com/widgets/location/v3/${process.env.TAPHUNTER_ID}.json`,
 			{
 				cache: "no-store",
 			},
