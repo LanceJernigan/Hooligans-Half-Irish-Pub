@@ -37,6 +37,7 @@
 		font-size: 35px;
 		line-height: 1em;
 		text-transform: uppercase;
+		white-space: pre-wrap;
 
 		@media (min-width: 480px) {
 			font-size: 45px;

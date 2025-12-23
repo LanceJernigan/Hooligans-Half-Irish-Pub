@@ -3,6 +3,8 @@
 import { useState } from "react";
 import styles from "./contactForm.module.css";
 import Cheers from "@/components/shared/icons/cheers";
+import { ContactProps } from "./types";
+import { PortableText } from "next-sanity";
 
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -28,7 +30,7 @@ const testValues = ({
 		: "You must enter a valid message.",
 });
 
-const ContactForm = () => {
+const ContactForm = ({ title, content, other, form }: ContactProps) => {
 	const [status, setStatus] = useState("new");
 	const [fields, setFields] = useState({
 		name: "",
@@ -80,12 +82,8 @@ const ContactForm = () => {
 		<section className={styles.component}>
 			<div className={styles.wrapper}>
 				<div className={styles.content}>
-					<h1 className={styles.title}>
-						Your Neighborhood Pub Is Just a Message Away
-					</h1>
-					<p className={styles.description}>
-						Reach out to us anytime. We’ll get back to you soon.
-					</p>
+					<h1 className={styles.title}>{title}</h1>
+					<PortableText value={content} />
 				</div>
 				<div className={styles.contact}>
 					{status === "new" || status === "submitting" ? (
@@ -155,23 +153,21 @@ const ContactForm = () => {
 						<div className={styles.message}>
 							{status === "submitted" ? <Cheers /> : null}
 							<h2 className={styles.messageHeading}>
-								{status === "submitted"
-									? "Cheers! We got your message"
-									: "Oops, that did not work"}
+								{status === "submitted" ? form.successTitle : form.errorTitle}
 							</h2>
 							<p className={styles.messageContent}>
 								{status === "submitted"
-									? "We have received your message. Keep an eye out for a reply from our team."
-									: "Something went wrong while sending your message. Please refresh the page and try again."}
+									? form.successMessage
+									: form.errorMessage}
 							</p>
 						</div>
 					)}
 					<div className={styles.other}>
-						<h2 className={styles.otherTitle}>Other ways to Connect</h2>
+						<h2 className={styles.otherTitle}>{other.title}</h2>
 						<ul className={styles.list}>
 							<li className={styles.item}>
 								<a
-									href="https://maps.app.goo.gl/Ymmjk1A6JnxJ6GYx5"
+									href={other.mapLink}
 									target="_blank"
 									className={styles.link}
 								>
@@ -183,7 +179,7 @@ const ContactForm = () => {
 							</li>
 							<li className={styles.item}>
 								<a
-									href=""
+									href={`mailto:${other.email}`}
 									className={styles.link}
 								>
 									<span className={`${styles.icon} material-icons-outlined`}>
@@ -194,7 +190,7 @@ const ContactForm = () => {
 							</li>
 							<li className={styles.item}>
 								<a
-									href="tel:+19315262927"
+									href={`tel:${other.phone}`}
 									className={styles.link}
 								>
 									<span className={`${styles.icon} material-icons-outlined`}>

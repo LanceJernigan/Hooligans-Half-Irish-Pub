@@ -18,6 +18,11 @@
 	color: var(--color-light);
 	text-align: center;
 	margin: auto;
+
+	p {
+		font-size: 25px;
+		font-family: var(--font-hanken);
+	}
 }
 
 .title {
@@ -33,11 +38,6 @@
 	@media (min-width: 768px) {
 		font-size: 60px;
 	}
-}
-
-.description {
-	font-size: 25px;
-	font-family: var(--font-hanken);
 }
 
 .contact {
