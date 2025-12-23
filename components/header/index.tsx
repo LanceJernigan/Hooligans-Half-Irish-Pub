@@ -6,8 +6,9 @@ import Menu from "@/components/shared/icons/menu";
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import useScrollState from "@/hooks/useScrollState";
+import { HeaderProps } from "./types";
 
-const Header = () => {
+const Header = ({ logo, siteTitle }: HeaderProps) => {
 	const [menuOpen, setMenuOpen] = useState(false);
 	const [isStuck, setIsStuck] = useState(false);
 	const [scrollDirection, setScrollDirection] = useState<"up" | "down">("down");
@@ -33,10 +34,10 @@ const Header = () => {
 				<div className={styles.wrapper}>
 					<Link href="/">
 						<Image
-							src="/assets/images/logo.png"
+							src={logo}
 							height={50}
 							width={50}
-							alt="Hooligan's Logo"
+							alt={siteTitle}
 						/>
 					</Link>
 					<button

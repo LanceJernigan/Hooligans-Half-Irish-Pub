@@ -2,7 +2,18 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
 	images: {
-		remotePatterns: [new URL("https://lh3.googleusercontent.com/**")],
+		remotePatterns: [
+			{
+				protocol: "https",
+				hostname: "lh3.googleusercontent.com",
+				pathname: "/**",
+			},
+			{
+				protocol: "https",
+				hostname: "cdn.sanity.io",
+				pathname: `/images/${process.env.SANITY_PROJECT_ID}/**`,
+			},
+		],
 	},
 };
 

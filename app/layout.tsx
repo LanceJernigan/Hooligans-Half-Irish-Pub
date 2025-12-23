@@ -1,10 +1,15 @@
-import type { Metadata } from "next";
 import { Sigmar, Hanken_Grotesk, Permanent_Marker } from "next/font/google";
 import Image from "next/image";
 import "material-icons/iconfont/outlined.css";
 import "./globals.css";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
+import { client } from "@/clients/sanity";
+import { SanityDocument } from "next-sanity";
+import urlFor from "@/utils/urlFor";
+
+const SETTINGS_QUERY = `*[_type == "siteSettings"][0]`;
+const options = { next: { revalidate: 30 } };
 
 const sigmar = Sigmar({
 	variable: "--font-sigmar",
@@ -23,23 +28,33 @@ const permanentMarker = Permanent_Marker({
 	subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-	title: "Hooligan's Half/Irish Pub",
-	description:
-		"Your neighborhood pub for great food, cold drinks, and every big game.",
-};
-
-export default function RootLayout({
+export default async function RootLayout({
 	children,
 }: Readonly<{
 	children: React.ReactNode;
 }>) {
+	const { logo, siteTitle } = await client.fetch<SanityDocument>(
+		SETTINGS_QUERY,
+		{},
+		options,
+	);
+
 	return (
 		<html lang="en">
 			<body
 				className={`${sigmar.variable} ${hanken.variable} ${permanentMarker.variable} antialiased relative`}
 			>
-				<Header />
+				<Header
+					logo={
+						urlFor(logo)
+							?.width(200)
+							?.height(200)
+							?.quality(100)
+							?.auto("format")
+							?.url() || ""
+					}
+					siteTitle={siteTitle}
+				/>
 				<main className="-mt-[1px]">{children}</main>
 				<Footer />
 				<div className="fixed top-0 left-0 h-screen w-screen -z-10 mix-blend-color-burn">
