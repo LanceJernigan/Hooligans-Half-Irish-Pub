@@ -5,6 +5,7 @@ import { useState } from "react";
 import { DrinksProps } from "./types";
 import DrinkCard from "../shared/drinkCard";
 import Chevron from "../shared/icons/chevron";
+import { PortableText } from "next-sanity";
 
 const labels = {
 	taps: "Tap",
@@ -16,6 +17,8 @@ const labels = {
 
 const Drinks = ({
 	menus: { taps, bottles, spirits, cocktails, ondeck },
+	title,
+	content,
 }: DrinksProps) => {
 	const [currentMenu, setCurrentMenu] = useState<
 		"taps" | "bottles" | "spirits" | "cocktails" | "ondeck"
@@ -32,11 +35,8 @@ const Drinks = ({
 		<section className={styles.component}>
 			<div className={styles.wrapper}>
 				<div className={styles.content}>
-					<h1 className={styles.title}>Drinks for Every Game, Every Night</h1>
-					<p className={styles.description}>
-						From ice-cold pints to craft cocktails, find your new favorite pour
-						while you cheer on your team.
-					</p>
+					<h1 className={styles.title}>{title}</h1>
+					<PortableText value={content} />
 				</div>
 				<div className={styles.drinks}>
 					<nav className={styles.navigation}>
