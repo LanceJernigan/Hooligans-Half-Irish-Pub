@@ -1,3 +1,5 @@
+import { PortableTextBlock } from "next-sanity";
+
 export interface Location {
 	address: string;
 	counts: {
@@ -191,4 +193,6 @@ export interface DrinkMenus {
 
 export interface DrinksProps {
 	menus: DrinkMenus;
+	title: string;
+	content: PortableTextBlock[];
 }
